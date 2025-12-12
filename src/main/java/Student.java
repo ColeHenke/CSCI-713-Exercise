@@ -25,9 +25,4 @@ public class Student {
 
     public double getGpa() { return gpa; }
     public void setGpa(double gpa) { this.gpa = gpa; }
-
-    // Extra unused method (code smell)
-    public void printStudentInfo() {
-        System.out.println(name + " " + age + " " + gpa);
-    }
 }

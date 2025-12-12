@@ -1,3 +1,4 @@
+import java.util.ConcurrentModificationException;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,6 +11,12 @@ public class Main {
         service.addStudent(s1);
         service.addStudent(s2);
         service.addStudent(s3);
+
+        try {
+            service.removeStudentByName("Alice");
+        } catch (ConcurrentModificationException e) {
+            System.out.print(e.getMessage());
+        }
 
         // Bug: Will crash if students list is empty
         System.out.println("Top Student: " + service.getTopStudent().getName());
